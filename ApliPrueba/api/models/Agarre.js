@@ -7,8 +7,21 @@
 
 module.exports = {
 
-  attributes: {
+    attributes: {
+        nombre: {
+            type: 'string',
+            required: true
+        },
+        veces: {
+            type: 'integer'
+        },
+        dineroGastado: {
+            type: 'float',
+        },
+        idUsuario: {
+            model: 'Usuario',
+            required: true
+        }
 
-  }
+    }
 };
-
