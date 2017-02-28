@@ -5,6 +5,14 @@
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+     <!-- CSS Bootstrap en la carpeta bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+    <!-- JQuery y JavaScript Bootstrap en la carpeta bootstrap-->
+    <script src="/bootstrap/js/jquery-3.1.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+    <!--
 
 
     <!--
@@ -29,11 +37,27 @@
     -->
 
     <!--STYLES-->
+    <link rel="stylesheet" href="/styles/estilos.css">
+    <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
   </head>
 
   <body>
-    <%- body %>
+  <nav class="navbar navbar-default">
+   <div class="container-fluid">
+    
+        <a class="navbar-brand" href="/"><center>Prueba de JS con Sails</center></a>
+    
+       </nav>
+    
+    </div>
+   <div class="container">
+      <%- body %>
+    </div>
+   
+     <div class="navbar navbar-fixed-bottom">
+      Desarrolado por Davwolf
+    </div>
 
 
 
@@ -59,6 +83,7 @@
     -->
 
     <!--TEMPLATES-->
+    
     <!--TEMPLATES END-->
 
 
@@ -86,6 +111,7 @@
     -->
 
     <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>
