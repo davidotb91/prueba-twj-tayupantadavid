@@ -10,13 +10,17 @@ module.exports = {
     attributes: {
         nombre: {
             type: 'string',
-            required: true
+            required: true,
+            enum:['vip','acumulativa','comun'],
+            
         },
         veces: {
-            type: 'integer'
+            type: 'integer',
+             required: true
         },
         dineroGastado: {
             type: 'float',
+             required: true
         },
         idUsuario: {
             model: 'Usuario',

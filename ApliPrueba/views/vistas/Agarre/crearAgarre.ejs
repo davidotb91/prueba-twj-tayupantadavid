@@ -1,0 +1,38 @@
+<h1>Crear Agarre</h1>
+
+  <form action="Agarre/crearAgarre" method="post">
+    <div class="form-group">
+      <label>Nombre</label>
+      <input required type="text" class="form-control" placeholder="Nombre" name="nombre">
+    </div>
+
+    <div class="form-group">
+      <label>Veces</label>
+      <input required type="number" class="form-control" placeholder="veces" name="veces">
+    </div>
+    
+     <div class="form-group">
+      <label>Dinero Gastado</label>
+      <input required type="number" step="0.01"class="form-control" placeholder="dineroGastado" name="dineroGastado">
+    </div>
+
+    <label for="">Usuario</label>
+   
+    <select class="form-control" name="idUsuario">
+      <% for(var i=0; i<usuarios.length; i++){ %>
+        <option value='<%=usuarios[i].id%>'>
+          <%=usuarios[i].nombres%>
+        </option>
+        <%  } %>
+    </select>
+
+
+
+
+
+
+    <br>
+    <button type="submit" class="btn btn-success">Crear Agarre</button>
+
+  </form>
+</div>
