@@ -69,7 +69,7 @@ module.exports = {
         });
 
     },
-       listarAgarre: function (req, res) {
+    listarAgarre: function (req, res) {
 
         Agarre.find().exec(function (error, agarresEncontrados) {
             if (error) return res.serverError()
@@ -80,8 +80,8 @@ module.exports = {
             })
         });
     },
-    
-      editarAgarre: function (req, res) {
+
+    editarAgarre: function (req, res) {
 
         var parametros = req.allParams();
         console.log(parametros);
@@ -90,11 +90,31 @@ module.exports = {
             Agarre.findOne({
                 id: parametros.id
             }).exec(function (error, agarreEncontrado) {
-                if (error) return res.serverError()
-                return res.view('vistas/Agarre/editarAgarre', {
-                    title: 'Editar Agarre - ' + agarreEncontrado.nombre,
-                    agarre: agarreEncontrado
-                })
+                if (error) return res.view('error', {
+                    title: 'Error',
+                    error: {
+                        descripcion: 'Fallo al buscar el agarre',
+                        url: '/crearAgarre'
+                    }
+                });
+
+
+                Usuario.find().exec(function (error, usuariosEncontrados) {
+                    if (error) return res.view('error', {
+                        title: 'Error',
+                        error: {
+                            descripcion: 'Fallo al buscar el agarre',
+                            url: '/crearAgarre'
+                        }
+                    });
+
+                    return res.view('vistas/Agarre/editarAgarre', {
+                        title: 'Editar Agarre - ' + agarreEncontrado.nombre,
+                        agarre: agarreEncontrado,
+                        usuarios: usuariosEncontrados
+                    })
+                });
+
             });
 
         } else {

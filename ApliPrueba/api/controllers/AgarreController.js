@@ -63,6 +63,8 @@ module.exports = {
         //creo el usuario
         console.log('Va a actualizar el agarre.')
         Agarre.update({
+            id: parametros.id
+        }, {
          nombre: parametros.nombre,
           veces: parametros.veces,
           dineroGastado: parametros.dineroGastado,
@@ -75,7 +77,7 @@ module.exports = {
               url: '/crearAgarre'
             }
           });
-         sails.log.info('Se actualizo el agarre: ', agarreCreado);
+         sails.log.info('Se actualizo el agarre: ', AgarreCreado);
 
           Agarre.find().exec(function (error, AgarresEncontrados) {
             if (error) return res.serverError()
@@ -93,7 +95,7 @@ module.exports = {
           title: 'Error',
           error: {
             descripcion: 'No envia todos los parametros',
-            url: '/crearAgarre'
+            url: '/editarAgarre'
           }
         });
       }
@@ -102,7 +104,7 @@ module.exports = {
         title: 'Error',
         error: {
           descripcion: 'Falla en el metodo HTTP',
-          url: '/crearAgarre'
+          url: '/editarAgarre'
         }
       });
     }

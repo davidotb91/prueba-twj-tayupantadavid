@@ -15,7 +15,6 @@
                 <label>Dinero Gastado</label>
                 <input required type="number" step="0.01" class="form-control" placeholder="dineroGastado" name="dineroGastado">
             </div>
-
             <label for="">Usuario</label>
 
             <select class="form-control" name="idUsuario">
@@ -25,28 +24,38 @@
                     </option>
                     <%  } %>
             </select>
-
-
-
-
-
-
+            <input type="hidden" name="id" value="<%=agarre.id%>">
+            <button type="submit" class="btn btn-success">Editar Agarre</button>
             <br>
-            <button type="submit" class="btn btn-success">Crear Agarre</button>
 
         </form>
     </div>
     <div class="col-sm-4">
-        <h3 class="text-center"> ID: <%=agarre.id%> -  <%=agarre.nombre%></h3>
-        <h3 class="text-center"> <%=agarres.veces%></h3>
-      <h3 class="text-center">
-        <%= agarres.dineroGastado%>
-      </h3>
-      <h3 class="text-center">
-        <%= agarres.idUsuario%>
-      </h3>
+
+        <h3 class="text-center"><%=agarre.id%> - <%=agarre.nombre%></h3>
+        <h4 class="text-center"> <%=agarre.veces%></h4>
+        <h4 class="text-center"> <%=agarre.dineroGastado%></h4>
+        <h4 class="text-center"> <%=agarre.idUsuario%></h4>
+
+
     </div>
 </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</form>
+</div>
+
 
 
 </div>
